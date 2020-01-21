@@ -7,21 +7,22 @@ jobs:
     steps:
       # Grab repo from Github
       - checkout
-      - restore_cache:
-          keys:
-              v1-dependencies-{{ checksum "requirements.txt" }}
-              v1-dependencies-
+#      - restore_cache:
+#          keys:
+#              v1-dependencies-{{ checksum "requirements.txt" }}
+#              v1-dependencies-
       # Install dependencies
       - run:
           name: install dependencies
           command: |
             pip install -r requirements.txt
             pip install docker-compose
-      - save_cache:
-          key: v1-dependencies-{{ checksum "requirements.txt" }}
+#      - save_cache:
+#          key: v1-dependencies-{{ checksum "requirements.txt" }}
 
       # Run tests
       - run:
+          name: run tests
           command: |
 #            docker-compose up -d
             docker-compose run app sh -c "python manage.py test && pylint app/"
