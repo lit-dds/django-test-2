@@ -30,8 +30,8 @@ jobs:
       - run:
           name: install dependencies
           command: |
-            pip install docker-compose
             pip install -r requirements.txt
+            sudo pip install docker-compose
 
       - save_cache:
           paths:
