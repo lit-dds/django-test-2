@@ -46,6 +46,7 @@ jobs:
       - run:
           name: run tests
           command: |
+            docker-compose run app sh -c "pwd"
             docker-compose run app sh -c "python manage.py test"
 
       - store_artifacts:
