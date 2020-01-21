@@ -46,8 +46,12 @@ jobs:
       - run:
           name: run tests
           command: |
-            python manage.py test && pylint app/
-#            docker-compose run app sh -c "python manage.py test"
+            python manage.py test
+
+      - run:
+          name: run linter
+          command: |
+            python manage.py pylint app/
 
       - store_artifacts:
           path: test-reports
