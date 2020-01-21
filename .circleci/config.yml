@@ -52,7 +52,7 @@ jobs:
           name: run linter
           command: |
             pylint app/
-
-      - store_artifacts:
-          path: test-reports
-          destination: test-reports
+#
+#      - store_artifacts:
+#          path: test-reports
+#          destination: test-reports
