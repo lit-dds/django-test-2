@@ -31,7 +31,7 @@ jobs:
           name: install dependencies
           command: |
             pip install -r requirements.txt --user
-            pip install docker-compose
+            pip install docker-compose --user
 
       - save_cache:
           paths:
