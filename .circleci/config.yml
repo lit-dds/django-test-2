@@ -51,7 +51,7 @@ jobs:
       - run:
           name: run linter
           command: |
-            python manage.py pylint app/
+            pylint app/
 
       - store_artifacts:
           path: test-reports
